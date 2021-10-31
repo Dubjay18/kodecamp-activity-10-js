@@ -127,7 +127,7 @@ function singlePost(postId) {
       console.log(d);
       let e = userPostNew[d];
       console.log(e);
-      window.location.pathname = "/post.html";
+      window.location.pathname = "/kodecamp-activity-10-js/post.html";
       html += `
        <div class="col-md-4">
                   <div class="card">
