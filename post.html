@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+    <title>post</title>
+  </head>
+  <body>
+    <div
+      class="
+        singlepost
+        d-flex
+        justify-content-center
+        align-items-center
+        p-5
+        m-5
+      "
+    >
+      <div></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const New = localStorage.getItem("userpost");
+      const userPostNew = JSON.parse(New);
+
+      console.log(New);
+      console.log(userPostNew);
+
+      let single = document.querySelector(".singlepost");
+      let d = userPostNew.length - 1;
+      let html = "";
+      console.log(d);
+      let e = userPostNew[d];
+      console.log(e);
+      console.log(e.id);
+      console.log(e.title);
+      console.log(e.body);
+      console.log(single);
+      //   window.location.pathname = "/post.html";
+      html += `
+       <div class="col-md-4">
+                  <div class="card p-5">
+                    <div class="card-body p-5">
+                    <h6 class="text-primary">${e.id}</h6>
+                    </div>
+                      <h5 class="post-title mb-4">${e.title}</h5>
+                      <p class="post-body">
+                        ${e.body}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+       `;
+      single.innerHTML = html;
+    </script>
+  </body>
+</html>
